@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Preemptive Priority CPU Scheduling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Non-Preemptive Priority CPU Scheduling</h1>
+            <p>Interactive Animation of Process Scheduling Algorithm</p>
+        </div>
+
+        <div class="main-content">
+            <div class="process-table-section">
+                <h2>Process Information</h2>
+                <table class="process-table">
+                    <thead>
+                        <tr>
+                            <th>PID</th>
+                            <th>Arrival</th>
+                            <th>Burst</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody id="processTableBody">
+                        <!-- We will have the process table here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="animation-section">
+                <h2>CPU Execution Timeline</h2>
+                <div class="time-display">
+                    Current Time: <span id="currentTime">0</span>
+                </div>
+
+                <div class="status" id="status">
+                    Ready to start simulation
+                </div>
+
+                <div class="gantt-chart" id="ganttChart">
+                    <!-- We will get the Gantt Chart here -->
+                </div>
+
+                <div class="queue-display">
+                    <h3>Ready Queue (Ordered by Priority)</h3>
+                    <div class="queue-items" id="queueItems">
+                        <!-- Here, we will have the items in the Queue -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" id="startBtn" onclick="startSimulation()">Start Simulation</button>
+            <button class="btn" id="nextBtn" onclick="nextStep()" disabled>Next Step</button>
+            <button class="btn" id="resetBtn" onclick="resetSimulation()">Reset</button>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <h2>Final Results</h2>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                        <th>Priority</th>
+                        <th>Completion Time</th>
+                        <th>Turnaround Time</th>
+                        <th>Waiting Time</th>
+                        <th>Response Time</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTableBody">
+                    <!-- Results will be populated here -->
+                </tbody>
+            </table>
+
+            <div class="averages">
+                <div class="average-card">
+                    <h3>Average Turnaround Time</h3>
+                    <div class="value" id="avgTAT">0.00</div>
+                </div>
+                <div class="average-card">
+                    <h3>Average Waiting Time</h3>
+                    <div class="value" id="avgWT">0.00</div>
+                </div>
+                <div class="average-card">
+                    <h3>Average Response Time</h3>
+                    <div class="value" id="avgRT">0.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
