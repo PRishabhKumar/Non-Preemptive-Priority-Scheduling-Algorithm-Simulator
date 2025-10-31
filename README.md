@@ -19,4 +19,7 @@ This project is a web-based simulator for the **Non-Preemptive Priority Scheduli
 ## Usage
 1. Clone or download the repository.  
 2. Open the `index.html` file in a browser.  
-3. View the scheduling results directly.  
+3. View the scheduling results directly.
+
+## Live website link
+https://non-preemptive-priority-scheduling.vercel.app/
