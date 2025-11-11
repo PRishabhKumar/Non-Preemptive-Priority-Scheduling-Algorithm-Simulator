@@ -430,46 +430,39 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.gantt-block:nth-child(1) { 
-    background-color: #3b82f6;
-    animation-delay: 0.05s;
-}
-.gantt-block:nth-child(2) { 
-    background-color: #8b5cf6;
-    animation-delay: 0.1s;
-}
-.gantt-block:nth-child(3) { 
-    background-color: #ec4899;
-    animation-delay: 0.15s;
-}
-.gantt-block:nth-child(4) { 
-    background-color: #f59e0b;
-    animation-delay: 0.2s;
-}
-.gantt-block:nth-child(5) { 
-    background-color: #10b981;
-    animation-delay: 0.25s;
-}
-.gantt-block:nth-child(6) { 
-    background-color: #06b6d4;
-    animation-delay: 0.3s;
-}
-.gantt-block:nth-child(7) { 
-    background-color: #ef4444;
-    animation-delay: 0.35s;
-}
-.gantt-block:nth-child(8) { 
-    background-color: #f59e0b;
-    animation-delay: 0.4s;
-}
-.gantt-block:nth-child(9) { 
-    background-color: #3b82f6;
-    animation-delay: 0.45s;
-}
-.gantt-block:nth-child(10) { 
-    background-color: #8b5cf6;
-    animation-delay: 0.5s;
-}
+/* Extended color palette for up to 15+ processes with cycling colors */
+.gantt-block:nth-child(15n+1) { background-color: #3b82f6; }
+.gantt-block:nth-child(15n+2) { background-color: #8b5cf6; }
+.gantt-block:nth-child(15n+3) { background-color: #ec4899; }
+.gantt-block:nth-child(15n+4) { background-color: #f59e0b; }
+.gantt-block:nth-child(15n+5) { background-color: #10b981; }
+.gantt-block:nth-child(15n+6) { background-color: #06b6d4; }
+.gantt-block:nth-child(15n+7) { background-color: #ef4444; }
+.gantt-block:nth-child(15n+8) { background-color: #f97316; }
+.gantt-block:nth-child(15n+9) { background-color: #14b8a6; }
+.gantt-block:nth-child(15n+10) { background-color: #a855f7; }
+.gantt-block:nth-child(15n+11) { background-color: #f43f5e; }
+.gantt-block:nth-child(15n+12) { background-color: #84cc16; }
+.gantt-block:nth-child(15n+13) { background-color: #0891b2; }
+.gantt-block:nth-child(15n+14) { background-color: #d946ef; }
+.gantt-block:nth-child(15n+15) { background-color: #eab308; }
+
+/* Animation delays */
+.gantt-block:nth-child(1) { animation-delay: 0.05s; }
+.gantt-block:nth-child(2) { animation-delay: 0.1s; }
+.gantt-block:nth-child(3) { animation-delay: 0.15s; }
+.gantt-block:nth-child(4) { animation-delay: 0.2s; }
+.gantt-block:nth-child(5) { animation-delay: 0.25s; }
+.gantt-block:nth-child(6) { animation-delay: 0.3s; }
+.gantt-block:nth-child(7) { animation-delay: 0.35s; }
+.gantt-block:nth-child(8) { animation-delay: 0.4s; }
+.gantt-block:nth-child(9) { animation-delay: 0.45s; }
+.gantt-block:nth-child(10) { animation-delay: 0.5s; }
+.gantt-block:nth-child(11) { animation-delay: 0.55s; }
+.gantt-block:nth-child(12) { animation-delay: 0.6s; }
+.gantt-block:nth-child(13) { animation-delay: 0.65s; }
+.gantt-block:nth-child(14) { animation-delay: 0.7s; }
+.gantt-block:nth-child(15) { animation-delay: 0.75s; }
 
 /* Queue Display */
 .queue-display {
