@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Non-Preemptive Priority CPU Scheduling</title>
+    <title>Non-Preemptive Priority CPU Scheduling - Dynamic</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,10 +12,31 @@
     <div class="container">
         <div class="header">
             <h1>Non-Preemptive Priority CPU Scheduling</h1>
-            <p>Interactive Animation of Process Scheduling Algorithm</p>
+            <p>Interactive Animation with Dynamic Process Input</p>
         </div>
 
-        <div class="main-content">
+        <!-- Input Section -->
+        <div class="input-section" id="inputSection">
+            <h2>Process Configuration</h2>
+            
+            <div class="process-count-input">
+                <label for="numProcesses">Number of Processes:</label>
+                <input type="number" id="numProcesses" min="1" max="15" value="5" onchange="generateInputFields()">
+                <button class="btn btn-generate" onclick="generateInputFields()">Generate Fields</button>
+            </div>
+
+            <div id="processInputFields" class="process-inputs">
+                <!-- Dynamic input fields will be generated here -->
+            </div>
+
+            <div class="input-actions">
+                <button class="btn btn-primary" onclick="startWithInputs()">Start Simulation</button>
+                <button class="btn btn-secondary" onclick="loadSampleData()">Load Sample Data</button>
+            </div>
+        </div>
+
+        <!-- Main Content (Hidden Initially) -->
+        <div class="main-content" id="mainContent" style="display: none;">
             <div class="process-table-section">
                 <h2>Process Information</h2>
                 <table class="process-table">
@@ -28,7 +49,7 @@
                         </tr>
                     </thead>
                     <tbody id="processTableBody">
-                        <!-- We will have the process table here -->
+                        <!-- Process table will be populated here -->
                     </tbody>
                 </table>
             </div>
@@ -44,24 +65,26 @@
                 </div>
 
                 <div class="gantt-chart" id="ganttChart">
-                    <!-- We will get the Gantt Chart here -->
+                    <!-- Gantt Chart will appear here -->
                 </div>
 
                 <div class="queue-display">
                     <h3>Ready Queue (Ordered by Priority)</h3>
                     <div class="queue-items" id="queueItems">
-                        <!-- Here, we will have the items in the Queue -->
+                        <!-- Queue items will appear here -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="controls">
-            <button class="btn" id="startBtn" onclick="startSimulation()">Start Simulation</button>
+        <!-- Controls (Hidden Initially) -->
+        <div class="controls" id="controls" style="display: none;">
+            <button class="btn" id="startBtn" onclick="startSimulation()">Start Execution</button>
             <button class="btn" id="nextBtn" onclick="nextStep()" disabled>Next Step</button>
-            <button class="btn" id="resetBtn" onclick="resetSimulation()">Reset</button>
+            <button class="btn" id="resetBtn" onclick="resetToInput()">New Simulation</button>
         </div>
 
+        <!-- Results Section -->
         <div class="results-section" id="resultsSection">
             <h2>Final Results</h2>
             <table class="results-table">
